@@ -94,6 +94,7 @@ const SideBar = ({ openMenu, setSideBarSelections }) => {
             <h4 className='text-lg'>+</h4>
           </div>
 
+          {/* Individual Folders */}
           {teams.map((team) => (
             team.team === highlightedTeam && (
               team.folders.map((folder) => (

@@ -1,6 +1,5 @@
-import * as React from 'react';
+import React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-import data from '../../data.json';
 
 const categoryColors = {
     'Technology': 'bg-green-200',
@@ -16,8 +15,7 @@ const columns = [
     { field: 'brand', headerName: 'Brand', width: 130, sortable: false, disableColumnMenu: true },
     { field: 'description', headerName: 'Description', width: 180, sortable: false, disableColumnMenu: true },
     { field: 'members', headerName: 'Members', width: 130, sortable: false, disableColumnMenu: true },
-    {
-        field: 'categories', headerName: 'Categories', width: 200, sortable: false, disableColumnMenu: true,
+    {field: 'categories', headerName: 'Categories', width: 200, sortable: false, disableColumnMenu: true,
         renderCell: (params) => (
             <div className='flex gap-1'>
                 {params.value.map((cat, index) => (
@@ -25,33 +23,26 @@ const columns = [
 
                 ))}
             </div>
-        )
-    },
-    {
-        field: 'tags', headerName: 'Tags', width: 200, sortable: false, disableColumnMenu: true,
+    )},
+    {field: 'tags', headerName: 'Tags', width: 200, sortable: false, disableColumnMenu: true,
         renderCell: (params) => (
             <div className='flex gap-1'>
                 {params.value.map((tag, index) => (
                     <div key={index} className='bg-gray-200 p-1 rounded-sm text-xs'># {tag}</div>
                 ))}
             </div>
-        )
-    },
-    {
-        field: 'next meetings', headerName: 'Next meeting', width: 150, sortable: false, disableColumnMenu: true,
+    )},
+    {field: 'next meetings', headerName: 'Next meeting', width: 150, sortable: false, disableColumnMenu: true,
 
         renderCell: (params) => (
-            <div className='bg-green-200 px-1'>{params.value}</div> // Customize cell content here
-        )
-
-    },
+            <div className='bg-green-200 px-1'>{params.value}</div>
+    )},
 ];
 
-export default function DataTable({newData}) {
+export default function DataTable({ newData }) {
 
     return (
         <div className='w-full border-none shadow'>
-
             <DataGrid
                 rows={newData}
                 columns={columns}

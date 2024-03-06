@@ -21,6 +21,7 @@ export const Home = () => {
         }
     }
 
+    // Filtering the data based on Search Term
     useEffect(() => {
         if (searchTerm) {
             const searchedData = newData.filter(item => item.brand.toLowerCase().includes(searchTerm));
@@ -39,12 +40,12 @@ export const Home = () => {
 
             <SideBar openMenu={openMenu} setSideBarSelections={setSideBarSelections} />
 
-
             <div className='w-full h-full m-1 '>
                 <Hearder handelSearch={handelSearch} searchTerm={searchTerm} handelMenu={handelMenu} sideBarSelections={sideBarSelections} />
 
                 <ToolBar data={data} newData={newData} setNewData={setNewData} />
 
+                {/* Conditional Rendering of Table */}
                 {sideBarSelections?.team === 'Design team' && sideBarSelections.folder === 'Products' ?
                     <Table newData={newData} /> :
                     (
