@@ -13,7 +13,7 @@ export const ToolBar = ({ data, setNewData, newData }) => {
     ];
 
     const tagsOptions = [
-        "Website Builder", "Small Business","Web Design","Online Store","Dropshipping","Movies","Theme Parks","Animation","TV Shows","Streaming","Cloud Services", "All"
+        "Website Builder", "Small Business", "Web Design", "Online Store", "Dropshipping", "Movies", "Theme Parks", "Animation", "TV Shows", "Streaming", "Cloud Services", "All"
     ]
 
     const handleSelectCatOption = (option) => {
@@ -64,16 +64,13 @@ export const ToolBar = ({ data, setNewData, newData }) => {
             </Button>
 
             <div>
-                <label className='text-xs'></label>
                 <Dropdown options={catOptions} onSelect={handleSelectCatOption}
                     title={`Category : ${selectedCatOption ? selectedCatOption : 'All'}`} />
             </div>
 
             <div>
                 <Dropdown options={tagsOptions} onSelect={handleSelectTagsOption}
-                    title={`Tags : ${selectedTagOption ? selectedTagOption : 'All'}`} 
-                    />
-
+                    title={`Tags : ${selectedTagOption ? selectedTagOption : 'All'}`} />
             </div>
         </div>
     )

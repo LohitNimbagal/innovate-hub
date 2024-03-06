@@ -13,7 +13,7 @@ const Dropdown = ({ options, onSelect, title }) => {
       <div>
         <button
           type="button"
-          className="text-black text-xs border py-1 px-2 rounded m-1 flex"
+          className="text-black text-xs border py-1 px-2 rounded m-1 flex hover:bg-gray-100"
           onClick={() => setIsOpen(!isOpen)}
         >
           {title}
