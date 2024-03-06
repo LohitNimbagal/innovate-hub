@@ -10,6 +10,7 @@ export const App = () => {
 
   const [newData, setNewData] = useState(data);
   const [searchTerm, setSearchTerm] = useState(null)
+  const [openMenu, setOpenMenu] = useState(false)
 
   const handelSearch = (term) => {
     if (term !== '') {
@@ -28,18 +29,22 @@ export const App = () => {
     }
   }, [searchTerm])
 
+  const handelMenu = () => {
+    console.log();
+    setOpenMenu(!openMenu)
+  }
+
   return (
     <div className='flex'>
 
-      <SideBar />
+      <SideBar openMenu={openMenu}/>
 
-      <div className='flex-1 m-2'>
-        <Hearder handelSearch={handelSearch} searchTerm={searchTerm}/>
+      <div className='w-full m-1'>
+        <Hearder handelSearch={handelSearch} searchTerm={searchTerm} handelMenu={handelMenu}/>
 
         <ToolBar data={data} newData={newData} setNewData={setNewData}/>
         
         <Table newData={newData}/>
-
       </div>
 
     </div>

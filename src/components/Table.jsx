@@ -50,7 +50,7 @@ const columns = [
 export default function DataTable({newData}) {
 
     return (
-        <div className='w-full h-4/5 border-none shadow'>
+        <div className='w-full border-none shadow'>
 
             <DataGrid
                 rows={newData}

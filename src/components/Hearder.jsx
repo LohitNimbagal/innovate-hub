@@ -3,11 +3,16 @@ import { SearchBar } from './ui/SearchBar';
 import { IconButton } from './ui/IconButton'
 import { useState } from 'react';
 
-export const Hearder = ({ handelSearch, searchTerm }) => {
+export const Hearder = ({ handelSearch, searchTerm, handelMenu, className }) => {
 
   return (
-    <div className='flex-1 h-10 bg-inherit m-2 flex items-center justify-between p-2 shadow rounded-md'>
-      <h1 className='capitalize '>Products</h1>
+    <div className={`flex-1 h-10 bg-inherit m-2 flex items-center justify-between p-2 lg:shadow lg:rounded-md ${className}`}>
+
+      <div className='flex lg:hidden' onClick={handelMenu}>
+        <svg xmlns="http://www.w3.org/2000/svg" width='20px' height='20px' viewBox="0 0 24 24" fill="currentColor"><path d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z"></path></svg>
+      </div>
+
+      <h1 className='capitalize hidden lg:block'>Products</h1>
 
       <div className='flex items-center gap-2'>
         <SearchBar handelSearch={handelSearch} searchTerm={searchTerm} />

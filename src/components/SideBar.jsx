@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Tab } from './ui/Tab';
 
-const SideBar = () => {
+const SideBar = ({openMenu}) => {
   const teams = ['Design team', 'Marketing team', 'Development team'];
   const folders = ['Products', 'Sales', 'Design', 'Office', 'Legal'];
 
@@ -17,7 +17,7 @@ const SideBar = () => {
   };
 
   return (
-    <div className='hidden h-screen md:w-1/5 m-2 p-2 shadow rounded-md lg:flex flex-col justify-between'>
+    <div className={`${openMenu ? 'flex' : 'hidden'} h-screen lg:w-1/5 m-2 p-2 shadow rounded-md lg:flex flex-col justify-between`}>
       <div className='sidebarTop'>
 
         {/* User Tab */}
