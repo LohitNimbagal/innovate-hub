@@ -17,7 +17,7 @@ const SideBar = () => {
   };
 
   return (
-    <div className='h-screen w-1/5 m-2 p-2 shadow rounded-md flex flex-col justify-between'>
+    <div className='hidden h-screen md:w-1/5 m-2 p-2 shadow rounded-md lg:flex flex-col justify-between'>
       <div className='sidebarTop'>
 
         {/* User Tab */}
@@ -35,7 +35,7 @@ const SideBar = () => {
         {/* Teams Tabs */}
         <div className='my-5 flex flex-col gap-2'>
           {teams.map((team) => (
-            <Tab key={team} id={team} onClick={() => handleTeamClick(team)} className={`p-2 flex items-center gap-2 justify-start hover:cursor-pointer ${highlightedTeam === team ? 'bg-gray-300' : ''}`}>
+            <Tab key={team} id={team} onClick={() => handleTeamClick(team)} className={`p-2 flex items-center gap-2 justify-start hover:cursor-pointer ${highlightedTeam === team ? 'bg-gray-200' : ''}`}>
               <h4>{team}</h4>
             </Tab>
           ))}
@@ -53,7 +53,7 @@ const SideBar = () => {
           </div>
 
           {folders.map((folder) => (
-            <Tab key={folder} id={folder} onClick={() => handleFolderClick(folder)} className={`p-2 flex items-center gap-2 justify-start hover:cursor-pointer ${highlightedFolder === folder ? 'bg-gray-300' : ''}`}>
+            <Tab key={folder} id={folder} onClick={() => handleFolderClick(folder)} className={`p-2 flex items-center gap-2 justify-start hover:cursor-pointer ${highlightedFolder === folder ? 'bg-gray-200' : ''}`}>
               <div className={`flex items-center gap-2 justify-start`} >
                 <h4>{folder}</h4>
               </div>

@@ -13,9 +13,8 @@ export const ToolBar = ({ data, setNewData, newData }) => {
     ];
 
     const tagsOptions = [
-        "Website Builder", "Small Business","Web Design","Online Store","Dropshipping","Movies","Theme Parks","Animation","TV Shows","Streaming","File Storage","Productivity","Electronics","Gaming","E-commerce","Cloud Services","AI","Search Engine","Advertising","iPhone","MacBook","iPad","Windows","Office Suite","Azure","Software", "All"
+        "Website Builder", "Small Business","Web Design","Online Store","Dropshipping","Movies","Theme Parks","Animation","TV Shows","Streaming","Cloud Services", "All"
     ]
-
 
     const handleSelectCatOption = (option) => {
         setSelectedCatOption(option);
@@ -72,7 +71,8 @@ export const ToolBar = ({ data, setNewData, newData }) => {
 
             <div>
                 <Dropdown options={tagsOptions} onSelect={handleSelectTagsOption}
-                    title={`Tags : ${selectedTagOption ? selectedTagOption : 'All'}`} />
+                    title={`Tags : ${selectedTagOption ? selectedTagOption : 'All'}`} 
+                    />
 
             </div>
         </div>
