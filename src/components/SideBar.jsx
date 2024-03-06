@@ -17,7 +17,7 @@ const SideBar = ({openMenu}) => {
   };
 
   return (
-    <div className={`${openMenu ? 'flex' : 'hidden'} h-screen lg:w-1/5 m-2 p-2 shadow rounded-md lg:flex flex-col justify-between`}>
+    <div className={`${openMenu ? 'flex' : 'hidden'}w-full min-h-screen lg:w-1/5 m-1 p-2 shadow rounded-md lg:flex flex-col justify-between`}>
       <div className='sidebarTop'>
 
         {/* User Tab */}

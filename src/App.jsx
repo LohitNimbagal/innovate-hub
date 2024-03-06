@@ -39,7 +39,7 @@ export const App = () => {
 
       <SideBar openMenu={openMenu}/>
 
-      <div className='w-full m-1'>
+      <div className='flex-1 m-1'>
         <Hearder handelSearch={handelSearch} searchTerm={searchTerm} handelMenu={handelMenu}/>
 
         <ToolBar data={data} newData={newData} setNewData={setNewData}/>
