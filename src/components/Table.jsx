@@ -21,7 +21,7 @@ const columns = [
         renderCell: (params) => (
             <div className='flex gap-1'>
                 {params.value.map((cat, index) => (
-                    <div key={index} className={`p-1 rounded-sm text-xs ${categoryColors[cat] || ''}`}>{cat}</div>
+                    <div key={index} className={`p-1 rounded-sm text-xs ${categoryColors[cat] || 'bg-indigo-200'}`}>{cat}</div>
 
                 ))}
             </div>
@@ -47,22 +47,13 @@ const columns = [
     },
 ];
 
-export default function DataTable() {
-
-    const [sortedData, setSortedData] = React.useState(data);
-
-    const handleSortButtonClick = () => {
-        const sorted = [...sortedData].sort((a, b) => (a.brand > b.brand) ? 1 : -1);
-        setSortedData(sorted);
-    };
+export default function DataTable({newData}) {
 
     return (
-        <div className='w-full h-3/4 border-none shadow'>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4" onClick={handleSortButtonClick}>
-                Sort Data
-            </button>
+        <div className='w-full h-4/5 border-none shadow'>
+
             <DataGrid
-                rows={sortedData}
+                rows={newData}
                 columns={columns}
                 checkboxSelection
             />
