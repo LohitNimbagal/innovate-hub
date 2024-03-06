@@ -49,7 +49,7 @@ export const Home = () => {
                     <Table newData={newData} /> :
                     (
                         <div className='w-full h-full flex items-center justify-center'>
-                            <h1 className='font-bold'>Click on Design Tean and Products Folder --- to Display the table</h1>
+                            <h1 className='text-center'>Click on <span className='font-bold'>Design Team </span>and <span className='font-bold'>Products Folder</span> <br /> for <span className='font-bold'>Table</span></h1>
                         </div>
                     )
                 }
